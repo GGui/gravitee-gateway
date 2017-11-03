@@ -106,13 +106,13 @@ cache:
 reporters:
   # Reporting system configuration
   system:
-    buffersize: 4096 # Must be a power of 2
+    buffersize: 4 # Must be a power of 2
 
   # Elasticsearch reporter
   elasticsearch:
     enabled: true # Is the reporter enabled or not (default to true)
-    hosts:
-      - ${ds.elastic.host}:${ds.elastic.port}
+    endpoints:
+      - http://localhost:9200
 #    index: gravitee
 #    cluster: elasticsearch
 #    bulk:
@@ -183,7 +183,7 @@ ds:
     port: ${GRAVITEEIO_MONGODB_PORT:27017}
   elastic:
     host: ${GRAVITEEIO_ELASTIC_HOST:localhost}
-    port: ${GRAVITEEIO_ELASTIC_PORT:9300}
+    port: ${GRAVITEEIO_ELASTIC_PORT:9200}
 
 # Sharding tags configuration
 # Allows to define inclusion/exclusion sharding tags to only deploy a part of APIs. To exclude just prefix the tag with '!'.
