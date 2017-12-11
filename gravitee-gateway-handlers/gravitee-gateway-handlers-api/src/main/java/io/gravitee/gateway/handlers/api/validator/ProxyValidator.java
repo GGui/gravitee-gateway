@@ -17,7 +17,6 @@ package io.gravitee.gateway.handlers.api.validator;
 
 import io.gravitee.definition.model.Proxy;
 import io.gravitee.gateway.handlers.api.definition.Api;
-import org.apache.commons.validator.routines.UrlValidator;
 
 /**
  * @author David BRASSELY (david at gravitee.io)
@@ -27,7 +26,7 @@ public class ProxyValidator implements Validator {
 
     private static final String CONTEXT_PATH_PATTERN = "^\\\\/([a-zA-Z0-9_-]+\\\\/?+)++";
 
-    private static final UrlValidator urlValidator = new UrlValidator(new String []{"http","https"}, UrlValidator.ALLOW_LOCAL_URLS);
+    // private static final UrlValidator urlValidator = new UrlValidator(new String []{"http","https"}, UrlValidator.ALLOW_LOCAL_URLS);
 
     @Override
     public void validate(Api definition) {
